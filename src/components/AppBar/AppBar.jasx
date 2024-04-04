@@ -1,0 +1,14 @@
+import Navigation from "../Navigation/Navigation.jsx";
+import UserMenu from "../UserMenu/UserMenu.jsx";
+import AuthNav from "../AuthNav/AuthNav.jsx";
+
+export deafult functon AppBar () {
+    const isLoggedIn = UseSelector
+    return (
+        <header>
+        <Navigation />
+        <UserMenu />
+        <AuthNav />
+        </header>
+    );
+}
