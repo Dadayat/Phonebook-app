@@ -35,10 +35,12 @@
 //     </div>
 //   );
 // };
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Layout from "./Layout/Layout";
+import { useDispatch } from "react-redux";
+import { refreshUser } from "../redux/auth/operations";
 
 const HomePage = lazy(() => import("../pages/Home"));
 const RegisterPage = lazy(() => import("../pages/Registration"));
@@ -46,6 +48,11 @@ const LoginPage = lazy(() => import("../pages/Login"));
 const ContactsPage = lazy(() => import("../pages/Contacts"));
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
   return (
     <Layout>
       <Suspense fallback={null}>
