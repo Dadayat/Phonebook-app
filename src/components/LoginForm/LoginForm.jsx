@@ -1,13 +1,28 @@
 import { Formik, Form, Field } from "formik";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 import css from "./LoginForm.module.css";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(logIn(values));
+    dispatch(logIn(values))
+      .unwrap()
+      .then(() => {
+        console.log("Log In");
+      })
+      .catch(() => {
+        toast("User Not Found or Wrong Password", {
+          icon: "🥵",
+          style: {
+            backgroundColor: "#b35b95",
+            borderRadius: "20px",
+            color: "#fff",
+          },
+        });
+      });
     actions.resetForm();
   };
 
