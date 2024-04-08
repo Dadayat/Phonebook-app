@@ -1,6 +1,8 @@
 .form {
   display: flex;
   flex-direction: column;
+  text-align: justify;
+  color: #64214d;
 }
 
 .filterInput {

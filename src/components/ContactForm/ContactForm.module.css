@@ -6,6 +6,8 @@
   flex-direction: column;
   row-gap: 10px;
   margin: 15px 0;
+  text-align: justify;
+  color: #64214d;
 }
 
 .contactInput {

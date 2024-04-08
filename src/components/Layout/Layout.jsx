@@ -4,9 +4,9 @@ import css from "./Layout.module.css";
 
 export default function Layout({ children }) {
   return (
-    <div className={css.font}>
+    <div>
       <AppBar />
-      {children}
+      <div className={css.font}>{children}</div>
       <Toaster position="top-right" reverseOrder={false} />
     </div>
   );

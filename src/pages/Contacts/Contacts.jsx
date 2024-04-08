@@ -26,7 +26,7 @@ export default function Contacts() {
       <div className={css.container}>
         <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Phonebook</h1>
         <ContactForm />
-        <h2>Contacts</h2>
+        <h2 style={{ textAlign: "justify" }}>Contacts</h2>
         <SearchBox />
         {error && <ErrorMessage />}
         {loading && <Loader />}
